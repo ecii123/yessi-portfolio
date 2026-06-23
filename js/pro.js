@@ -363,10 +363,36 @@ function resetAutoPlay() {
 }
 
 // Mengontrol perilaku Hover (Berhenti saat ditunjuk kursor)
+// --- INITIALIZATION & INTERSECTION OBSERVER ---
+const carouselContainer = document.getElementById('cert-carousel-container');
 const carouselViewport = document.getElementById('carousel-viewport');
-if(carouselViewport) {
-    startAutoPlay();
+
+if (carouselContainer && carouselViewport) {
+    // Gunakan IntersectionObserver untuk mendeteksi kapan bagian sertifikat masuk ke layar
+    const certObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            // Ketika seksi sertifikat mulai terlihat di layar pengguna
+            if (entry.isIntersecting) {
+                // FORCE RESET: Pastikan slider dipaksa kembali ke indeks 0 (Oracle)
+                currentCert = 0;
+                updateCarousel();
+                
+                // Mulai putaran otomatis HANYA setelah user sampai di bagian ini
+                startAutoPlay();
+                
+                // Unobserve agar tidak terus-menerus mereset ke awal saat user scroll naik-turun
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 }); // Aktif ketika 20% dari komponen sertifikat sudah terlihat di layar
+
+    // Jalankan pengamat pada kontainer sertifikat
+    certObserver.observe(carouselContainer);
+
+    // Fitur berhenti otomatis saat kursor masuk ke dalam area card tetap dipertahankan
     carouselViewport.addEventListener('mouseenter', stopAutoPlay);
+    
+    // Fitur berjalan kembali saat kursor keluar dari area card
     carouselViewport.addEventListener('mouseleave', startAutoPlay);
 }
 
