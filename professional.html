@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yessi Sitanggang | Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/pro.css">
+</head>
+<body class="bg-[#F8FAFC] text-slate-800 antialiased font-jakarta cursor-none overflow-x-hidden selection:bg-blue-500 selection:text-white">
+
+    <!-- LOADING SCREEN (PRELOADER) -->
+    <div id="preloader" class="fixed inset-0 z-[99999] bg-[#F8FAFC] flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="relative w-20 h-20 flex items-center justify-center mb-6">
+            <div class="absolute inset-0 rounded-2xl border-4 border-blue-100 border-t-blue-600 animate-spin"></div>
+            <span class="font-extrabold text-2xl bg-gradient-to-br from-blue-600 to-teal-500 bg-clip-text text-transparent">YS</span>
+        </div>
+        <p class="text-slate-500 text-xs font-bold tracking-[0.2em] uppercase animate-pulse">Compiling Experience...</p>
+    </div>
+
+    <!-- Custom Cursor & Progress -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+    <div class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-teal-400 z-[60] transition-all duration-150" id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500 py-4 px-6 md:px-12 flex justify-between items-center border-b border-transparent">
+        <div class="font-extrabold text-xl tracking-tighter flex items-center gap-3">
+            <span class="w-9 h-9 bg-gradient-to-br from-blue-600 to-teal-500 rounded-xl flex items-center justify-center text-white text-xs shadow-lg shadow-blue-500/20">YS</span>
+            <span class="hidden sm:block">Yessi.</span>
+        </div>
+        <div class="flex items-center space-x-6">
+            <div class="hidden lg:flex items-center space-x-8 text-sm font-bold tracking-wide text-slate-600 mr-4">
+                <a href="#about" class="nav-link hover:text-blue-600">About</a>
+                <a href="#experience" class="nav-link hover:text-blue-600">Experience</a>
+                <a href="#projects" class="nav-link hover:text-blue-600">Projects</a>
+                <a href="#leadership" class="nav-link hover:text-blue-600">Leadership</a>
+                <a href="#skills" class="nav-link hover:text-blue-600">Skills</a>
+            </div>
+            <a href="index.html" class="group flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 border border-slate-200 text-slate-600 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all text-xs font-bold tracking-wide">
+                <i class="ph-bold ph-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+                <span class="hidden md:block">Back to Gateway</span>
+                <span class="block md:hidden">Back</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="about" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 pointer-events-none">
+            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjIiIGZpbGw9IiNFMkU4RjAiLz48L3N2Zz4=')] opacity-50"></div>
+            <div class="absolute -top-40 -right-20 w-[700px] h-[700px] rounded-full bg-blue-100 blur-[120px] opacity-70 animate-pulse"></div>
+            <div class="absolute -bottom-20 -left-20 w-[600px] h-[600px] rounded-full bg-teal-50 blur-[120px] opacity-70"></div>
+        </div>
+
+        <div class="container mx-auto px-6 md:px-12 flex flex-col-reverse md:flex-row items-center relative z-10 gap-12">
+            <div class="md:w-3/5 reveal slide-right mt-10 md:mt-0">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-6 shadow-sm">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                    </span>
+                    Institut Teknologi Del • GPA 3.52/4.00
+                </div>
+                
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-4 text-slate-900 tracking-tight">
+                    Hi, I'm <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 bg-[length:200%_auto] animate-gradient">Yessi Sitanggang</span>
+                </h1>
+                
+                <h2 class="text-xl md:text-2xl text-slate-600 mb-6 font-bold h-8">
+                    <span id="typewriter" class="text-blue-600"></span><span class="cursor">|</span>
+                </h2>
+                
+                <p class="text-slate-500 mb-8 max-w-xl leading-relaxed text-base">
+                    An Informatics student passionate about building digital products from the ground up. With hands-on experience in software development and a strong background in Agile leadership, I focus on creating solutions that are both technically solid and business-friendly.
+                </p>
+                
+                <div class="flex flex-wrap gap-4 items-center">
+                    <a href="#experience" class="flex items-center gap-2 bg-slate-900 hover:bg-blue-600 text-white px-7 py-3.5 rounded-full shadow-lg font-bold text-sm transition-all duration-300 hover:shadow-blue-500/30 hover:-translate-y-1">
+                        Explore Journey <i class="ph-bold ph-arrow-down-right"></i>
+                    </a>
+                    <a href="assets/Yessi_Sitanggang_CV_ODP.pdf" download class="flex items-center gap-2 px-7 py-3.5 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-blue-500 hover:text-blue-600 shadow-sm text-sm font-bold transition-all hover:-translate-y-1">
+                        Download CV <i class="ph-bold ph-download-simple"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="md:w-2/5 flex justify-center reveal slide-left relative">
+                <div class="absolute -left-8 top-10 bg-white/80 backdrop-blur-md border border-slate-100 p-3 rounded-2xl shadow-xl z-20 animate-float">
+                    <i class="ph-fill ph-code text-2xl text-blue-500 mb-1"></i>
+                    <div class="text-slate-800 font-bold text-xs">Fullstack Dev</div>
+                </div>
+                <div class="absolute -right-4 bottom-16 bg-white/80 backdrop-blur-md border border-slate-100 p-3 rounded-2xl shadow-xl z-20 animate-float" style="animation-delay: 2s;">
+                    <i class="ph-fill ph-kanban text-2xl text-teal-500 mb-1"></i>
+                    <div class="text-slate-800 font-bold text-xs">Scrum Leader</div>
+                </div>
+
+                <div class="relative w-72 h-72 lg:w-80 lg:h-80">
+                    <div class="absolute inset-0 rounded-full border-2 border-dashed border-blue-200 animate-[spin_20s_linear_infinite]"></div>
+                    <div class="absolute inset-4 rounded-full border border-teal-100 animate-[spin_15s_linear_infinite_reverse]"></div>
+                    <img src="assets/profile-pro.jpeg" alt="Yessi Sitanggang" class="absolute inset-6 w-[calc(100%-3rem)] h-[calc(100%-3rem)] object-cover rounded-full border-4 border-white shadow-2xl transition-transform duration-500 hover:scale-[1.03]">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Professional Experience (Interactive Tabs) -->
+    <section id="experience" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6 md:px-12 max-w-5xl">
+            <div class="text-center mb-16 reveal fade-up">
+                <span class="bg-blue-50 text-blue-600 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest border border-blue-100">Career History</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 mt-4">Professional Experience</h2>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8 md:gap-12 reveal slide-up">
+                
+                <!-- TABS NAVIGATION -->
+                <div class="md:w-1/3 flex md:flex-col overflow-x-auto md:overflow-visible hide-scrollbar border-b-2 md:border-b-0 md:border-l-2 border-slate-100 relative z-10">
+                    <button class="exp-tab active text-left px-4 md:px-6 py-3 md:py-4 font-bold text-sm transition-all whitespace-nowrap outline-none" onclick="switchTab('exp-tera', this)">
+                        PT Tera Multi Wahana
+                    </button>
+                    <button class="exp-tab text-left px-4 md:px-6 py-3 md:py-4 font-bold text-sm transition-all whitespace-nowrap outline-none text-slate-500 hover:text-blue-500 hover:bg-slate-50" onclick="switchTab('exp-suzuki', this)">
+                        Suzuki Finance
+                    </button>
+                    <button class="exp-tab text-left px-4 md:px-6 py-3 md:py-4 font-bold text-sm transition-all whitespace-nowrap outline-none text-slate-500 hover:text-blue-500 hover:bg-slate-50" onclick="switchTab('exp-zonaebt', this)">
+                        Zonaebt.com
+                    </button>
+                </div>
+
+                <!-- TABS CONTENT -->
+                <div class="md:w-2/3 relative min-h-[320px]">
+                    
+                    <!-- Content 1: PT Tera Multi Wahana -->
+                    <div id="exp-tera" class="exp-content active animate-tab-fade">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-1">Developer Intern</h3>
+                        <div class="flex flex-wrap items-center gap-2 mb-4">
+                            <p class="text-blue-600 font-bold text-sm">PT Tera Multi Wahana</p>
+                            <span class="exp-date-badge">Aug – Dec 2025</span>
+                            <span class="exp-duration-badge"><i class="ph-bold ph-clock"></i> 5 months</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-slate-600 text-sm leading-relaxed mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="ph-bold ph-caret-right text-blue-500 mt-1"></i>
+                                <span>Developed and enhanced 50+ features for the Distributor Management System (DMS) by translating Functional Specification Documents (FSD) into reliable application features aligned with business requirements.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ph-bold ph-caret-right text-blue-500 mt-1"></i>
+                                <span>Built and improved frontend and backend components using <strong>Flutter, Dart, and C#</strong>.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ph-bold ph-caret-right text-blue-500 mt-1"></i>
+                                <span>Utilized SQL Server Management Studio (SSMS) to validate data integrity, perform complex queries, and maintained collaborative workflows utilizing <strong>SVN Tortoise</strong>.</span>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span> <span class="tech-tag">C#</span> <span class="tech-tag">SSMS</span> <span class="tech-tag">SVN Tortoise</span>
+                        </div>
+                    </div>
+
+                    <!-- Content 2: Suzuki Finance -->
+                    <div id="exp-suzuki" class="exp-content hidden">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-1">Mobile Developer Intern</h3>
+                        <div class="flex flex-wrap items-center gap-2 mb-4">
+                            <p class="text-blue-600 font-bold text-sm">PT Suzuki Finance Indonesia</p>
+                            <span class="exp-date-badge">Jun – Aug 2025</span>
+                            <span class="exp-duration-badge"><i class="ph-bold ph-clock"></i> 3 months</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-slate-600 text-sm leading-relaxed mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="ph-bold ph-caret-right text-blue-500 mt-1"></i>
+                                <span>Developed the SMILE module for the SUFI ONE mobile application using Flutter and Dart, delivering a structured digital solution to support marketing staff in managing dealer visits.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ph-bold ph-caret-right text-blue-500 mt-1"></i>
+                                <span>Built core features such as direct visit, task visit, and history visit, while implementing bearer token authentication to ensure secure and controlled system access.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ph-bold ph-caret-right text-blue-500 mt-1"></i>
+                                <span>Improved the marketing reporting workflow by streamlining visit data entry.</span>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Flutter</span> <span class="tech-tag">Dart</span> <span class="tech-tag">REST API</span>
+                        </div>
+                    </div>
+
+                    <!-- Content 3: Zonaebt -->
+                    <div id="exp-zonaebt" class="exp-content hidden">
+                        <h3 class="text-2xl font-extrabold text-slate-900 mb-1">Frontend Developer Intern</h3>
+                        <div class="flex flex-wrap items-center gap-2 mb-4">
+                            <p class="text-blue-600 font-bold text-sm">Zonaebt.com</p>
+                            <span class="exp-date-badge">Jun – Aug 2025</span>
+                            <span class="exp-duration-badge"><i class="ph-bold ph-clock"></i> 3 months</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-slate-600 text-sm leading-relaxed mb-6">
+                            <li class="flex items-start gap-2">
+                                <i class="ph-bold ph-caret-right text-blue-500 mt-1"></i>
+                                <span>Developed the ZonaEBT carbon calculator website from scratch using Laravel, translating carbon footprint calculation requirements into a functional and user accessible digital product.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ph-bold ph-caret-right text-blue-500 mt-1"></i>
+                                <span>Implemented calculation logic based on scientific formulas and transformed complex carbon data into clear, informative, and easy to understand visual outputs.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="ph-bold ph-caret-right text-blue-500 mt-1"></i>
+                                <span>Collaborated with UI/UX and research teams to design a responsive interface and refine the user input flow.</span>
+                            </li>
+                        </ul>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-tag">Laravel</span> <span class="tech-tag">UI/UX</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section id="projects" class="py-24 bg-[#F8FAFC] border-t border-slate-100">
+        <div class="container mx-auto px-6 md:px-12 max-w-6xl">
+            <div class="text-center mb-16 reveal fade-up">
+                <span class="bg-blue-50 text-blue-600 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest border border-blue-100">Showcase</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 mt-4">Selected Projects</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- SIMBA Android -->
+                <div class="tilt-card reveal slide-up h-full">
+                    <div class="p-6 bg-white rounded-3xl shadow-sm hover:shadow-xl border border-slate-200 h-full flex flex-col group transition-all duration-300">
+                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-5 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                            <i class="ph-bold ph-device-mobile text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-1">SIMBA Mobile</h3>
+                        <p class="text-blue-600 text-[10px] font-bold uppercase tracking-wider mb-3">Scrum Leader & Mobile Developer</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">Created the Android version of the SIMBA student portal using Kotlin, allowing students and staff to track academic progress and counseling efficiently.</p>
+                        <div class="flex flex-col gap-4 mt-auto">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-tag">Kotlin</span> <span class="tech-tag">Android</span>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-100 pt-4 mt-2">
+                                <button onclick="openCaseStudy('simba-mobile')" class="text-xs font-bold text-blue-600 hover:text-blue-800 flex items-center gap-1 transition-colors">
+                                    View Case Study <i class="ph-bold ph-arrow-right"></i>
+                                </button>
+                                <a href="https://github.com/pardzheri/pam-2025-simba.git" target="_blank" class="text-slate-400 hover:text-slate-800 transition-colors" title="View Repository">
+                                    <i class="ph-fill ph-github-logo text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SIMBA Web -->
+                <div class="tilt-card reveal slide-up h-full" style="transition-delay: 100ms;">
+                    <div class="p-6 bg-white rounded-3xl shadow-sm hover:shadow-xl border border-slate-200 h-full flex flex-col group transition-all duration-300">
+                        <div class="w-12 h-12 bg-teal-50 rounded-xl flex items-center justify-center text-teal-600 mb-5 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                            <i class="ph-bold ph-browser text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-1">SIMBA Web</h3>
+                        <p class="text-teal-600 text-[10px] font-bold uppercase tracking-wider mb-3">Front-end Developer & Scrum Leader</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">Designed and built a modern, responsive web application for student management using Laravel and JavaScript.</p>
+                        <div class="flex flex-col gap-4 mt-auto">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-tag">Laravel</span> <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-100 pt-4 mt-2">
+                                <button onclick="openCaseStudy('simba-web')" class="text-xs font-bold text-teal-600 hover:text-teal-800 flex items-center gap-1 transition-colors">
+                                    View Case Study <i class="ph-bold ph-arrow-right"></i>
+                                </button>
+                                <a href="https://github.com/MariaNasution/SIMBA.git" target="_blank" class="text-slate-400 hover:text-slate-800 transition-colors" title="View Repository">
+                                    <i class="ph-fill ph-github-logo text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SITA Website -->
+                <div class="tilt-card reveal slide-up h-full" style="transition-delay: 200ms;">
+                    <div class="p-6 bg-white rounded-3xl shadow-sm hover:shadow-xl border border-slate-200 h-full flex flex-col group transition-all duration-300">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                            <i class="ph-bold ph-monitor-play text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-1">SITA System</h3>
+                        <p class="text-indigo-600 text-[10px] font-bold uppercase tracking-wider mb-3">Web Designer & FE Dev</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">Designed the UI in Figma and developed the frontend using Laravel to help students and lecturers manage final year projects effortlessly.</p>
+                        <div class="flex flex-col gap-4 mt-auto">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-tag">Figma</span> <span class="tech-tag">Laravel</span>
+                            </div>
+                            <div class="flex items-center justify-between border-t border-slate-100 pt-4 mt-2">
+                                <button onclick="openCaseStudy('sita')" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 flex items-center gap-1 transition-colors">
+                                    View Case Study <i class="ph-bold ph-arrow-right"></i>
+                                </button>
+                                <a href="https://github.com/william-napitupulu/SITA.git" target="_blank" class="text-slate-400 hover:text-slate-800 transition-colors" title="View Repository">
+                                    <i class="ph-fill ph-github-logo text-2xl"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Portfolio App — tanpa Case Study, GitHub di samping tech tags -->
+                <div class="tilt-card reveal slide-up h-full">
+                    <div class="p-6 bg-white rounded-3xl shadow-sm hover:shadow-xl border border-slate-200 h-full flex flex-col group transition-all duration-300">
+                        <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center text-purple-600 mb-5 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                            <i class="ph-bold ph-user-circle text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-1">My Portfolio App</h3>
+                        <p class="text-purple-600 text-[10px] font-bold uppercase tracking-wider mb-3">Mobile Developer</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">A personal Android app to showcase my CV and projects. Built with modern Kotlin and Jetpack Compose, fully responsive across screens.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-tag">Jetpack Compose</span>
+                            </div>
+                            <a href="https://github.com/ecii123/Aplikasi_Portofolioku.git" target="_blank" class="text-slate-400 hover:text-slate-800 transition-colors" title="View Repository">
+                                <i class="ph-fill ph-github-logo text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kedai Kopi Senja — tanpa Case Study, GitHub di samping tech tags -->
+                <div class="tilt-card reveal slide-up h-full" style="transition-delay: 100ms;">
+                    <div class="p-6 bg-white rounded-3xl shadow-sm hover:shadow-xl border border-slate-200 h-full flex flex-col group transition-all duration-300">
+                        <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 mb-5 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                            <i class="ph-bold ph-coffee text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-extrabold text-slate-900 mb-1">Kedai Kopi Senja</h3>
+                        <p class="text-orange-600 text-[10px] font-bold uppercase tracking-wider mb-3">Web Developer</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed flex-grow">Built an online coffee ordering site using Laravel Blade, featuring a clean UI for menu browsing and easy table reservations.</p>
+                        <div class="flex items-center justify-between mt-auto">
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tech-tag">Blade</span> <span class="tech-tag">HTML/CSS</span>
+                            </div>
+                            <a href="https://github.com/ecii123/kedai-kopi-kenangan-senja.git" target="_blank" class="text-slate-400 hover:text-slate-800 transition-colors" title="View Repository">
+                                <i class="ph-fill ph-github-logo text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Academic Roles -->
+    <section id="leadership" class="py-24 bg-white relative border-t border-slate-100">
+        <div class="container mx-auto px-6 md:px-12 max-w-5xl">
+            <div class="text-center mb-16 reveal fade-up">
+                <span class="bg-purple-50 text-purple-600 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest border border-purple-100">Beyond Coding</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 mt-4">Leadership & Academic Roles</h2>
+                <p class="text-slate-500 mt-4 max-w-2xl mx-auto text-sm">Building communication, management, and analytical skills through active participation in academic research and student organizations.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-200 reveal slide-up hover:border-purple-200 hover:shadow-md transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                            <i class="ph-bold ph-chalkboard-teacher text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-slate-900 text-lg">Assistant Lecturer</h3>
+                            <p class="text-purple-600 text-xs font-bold uppercase">Aug 2023 - Apr 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">Conducted weekly tutoring sessions for Basic Mathematics I & II students. Helped them grasp complex concepts, monitored their progress, and provided constructive feedback in coordination with the main lecturer.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-200 reveal slide-up hover:border-purple-200 hover:shadow-md transition-all" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                            <i class="ph-bold ph-users-three text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-slate-900 text-lg">Student Leadership Program</h3>
+                            <p class="text-purple-600 text-xs font-bold uppercase">Aug 2023 - Sep 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">Served as a mentor ("Kakak Asuh") for 5 junior students. Guided them through dormitory life and academics, supervised daily activities, and assisted the dormitory head in enforcing discipline and cultural norms.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-200 reveal slide-up hover:border-purple-200 hover:shadow-md transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                            <i class="ph-bold ph-files text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-slate-900 text-lg">General Election Commission</h3>
+                            <p class="text-purple-600 text-xs font-bold uppercase">May 2024 - Nov 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">Served as an Administration Member for the Informatics Student Association. Managed crucial documents, coordinated campaign schedules, and ensured smooth execution of the student election process.</p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-200 reveal slide-up hover:border-purple-200 hover:shadow-md transition-all" style="transition-delay: 100ms;">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600">
+                            <i class="ph-bold ph-microscope text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-slate-900 text-lg">Research Team Member</h3>
+                            <p class="text-purple-600 text-xs font-bold uppercase">May 2024 - Nov 2024</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">Contributed to a machine learning study focused on classifying facial skin disorders using CNN and MobileNetV3 architecture. Actively involved in collecting and processing datasets to improve model accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Certifications -->
+    <section id="skills" class="py-24 bg-[#F8FAFC] relative border-t border-slate-100">
+        <div class="container mx-auto px-6 md:px-12 max-w-5xl">
+            <div class="text-center mb-16 reveal fade-up">
+                <span class="bg-blue-50 text-blue-600 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-widest border border-blue-100">Capabilities</span>
+                <h2 class="text-4xl font-extrabold text-slate-900 mt-4">Technical Stack & Certifications</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-14 reveal fade-up">
+
+                <!-- Mobile Dev -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-5">
+                        <i class="ph-fill ph-device-mobile text-2xl text-teal-500"></i>
+                        <h3 class="font-extrabold text-slate-800">Mobile Dev</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">Flutter / Dart</span>
+                                <span class="text-xs font-bold text-blue-600">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">Kotlin</span>
+                                <span class="text-xs font-bold text-teal-600">Intermediate</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill teal" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">Jetpack Compose</span>
+                                <span class="text-xs font-bold text-teal-600">Intermediate</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill teal" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Dev -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-5">
+                        <i class="ph-fill ph-browser text-2xl text-blue-500"></i>
+                        <h3 class="font-extrabold text-slate-800">Web Dev</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">Laravel</span>
+                                <span class="text-xs font-bold text-blue-600">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">HTML & CSS</span>
+                                <span class="text-xs font-bold text-blue-600">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">JavaScript</span>
+                                <span class="text-xs font-bold text-teal-600">Intermediate</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill teal" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & DB -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-5">
+                        <i class="ph-fill ph-database text-2xl text-purple-500"></i>
+                        <h3 class="font-extrabold text-slate-800">Backend & DB</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">C#</span>
+                                <span class="text-xs font-bold text-purple-600">Intermediate</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill purple" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">SQL Server / PostgreSQL</span>
+                                <span class="text-xs font-bold text-purple-600">Intermediate</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill purple" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">REST API</span>
+                                <span class="text-xs font-bold text-blue-600">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business & Tools -->
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex items-center gap-3 mb-5">
+                        <i class="ph-fill ph-briefcase text-2xl text-orange-500"></i>
+                        <h3 class="font-extrabold text-slate-800">Business & Tools</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">Agile / Scrum</span>
+                                <span class="text-xs font-bold text-orange-600">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill orange" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">UI/UX Figma</span>
+                                <span class="text-xs font-bold text-orange-600">Intermediate</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill orange" style="width: 72%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar-item">
+                            <div class="flex justify-between mb-1.5">
+                                <span class="text-xs font-bold text-slate-700">Git / SVN</span>
+                                <span class="text-xs font-bold text-blue-600">Advanced</span>
+                            </div>
+                            <div class="skill-bar-track">
+                                <div class="skill-bar-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications: Auto-Play Carousel -->
+           <div id="cert-carousel-container" class="relative w-full max-w-4xl mx-auto mt-16 group reveal fade-up">
+                
+                <div class="overflow-hidden rounded-3xl border border-slate-200 shadow-sm bg-white relative" id="carousel-viewport">
+                    <div id="cert-track" class="flex transition-transform duration-500 ease-out">
+                        
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/oracle.pdf', 'pdf')">
+                                <img src="assets/oracle.png" alt="Oracle Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-orange-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Cloud Infrastructure AI Foundations</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Oracle • 2025 Certified Associate</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/myskill.pdf', 'pdf')">
+                                <img src="assets/myskill.png" alt="MySkill Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center text-teal-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">UI/UX Research & Design Bootcamp</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">MySkill • Distinction (Score 88)</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/coursera.pdf', 'pdf')">
+                                <img src="assets/coursera.png" alt="Coursera Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Business Analysis & Process Management</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Coursera</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/penelitian.jpeg', 'img')">
+                                <img src="assets/penelitian.jpeg" alt="Research Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-purple-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Research Member</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">IT Del</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/asdos.pdf', 'pdf')">
+                                <img src="assets/asdos.png" alt="Asdos Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-indigo-50 rounded-full flex items-center justify-center text-indigo-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Assistant Lecturer Basic Mathematics I & II</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">IT Del</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/kasuh.jpeg', 'img')">
+                                <img src="assets/kasuh.jpeg" alt="Kakak Asuh Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center text-red-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Student Leadership Program</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">IT Del</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/administrasi.jpeg', 'img')">
+                                <img src="assets/administrasi.jpeg" alt="Administrasi Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">FITE General Election Commission</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">IT Del</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/dicoding1.png', 'img')">
+                                <img src="assets/dicoding1.png" alt="Dicoding Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Learn DevOps Basics</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Dicoding</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/dicoding2.png', 'img')">
+                                <img src="assets/dicoding2.png" alt="Dicoding Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Learn Intermediate Web Development</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Dicoding</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/dicoding3.png', 'img')">
+                                <img src="assets/dicoding3.png" alt="Dicoding Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Learn to Create Front-End Web for Beginners</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Dicoding</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/dicoding4.png', 'img')">
+                                <img src="assets/dicoding4.png" alt="Dicoding Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Learn Front-End Web Development Fundamentals</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Dicoding</p>
+                            </div>
+                        </div>
+
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/dicoding5.png', 'img')">
+                                <img src="assets/dicoding5.png" alt="Dicoding Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Learn the Basics of Web Programming</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Dicoding</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/dicoding6.png', 'img')">
+                                <img src="assets/dicoding6.png" alt="Dicoding Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Learn JavaScript Programming Basics</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Dicoding</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/skilvul1.png', 'img')">
+                                <img src="assets/skilvul1.png" alt="Skilvul Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Basic Python Programming</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Skilvul</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/skilvul2.png', 'img')">
+                                <img src="assets/skilvul2.png" alt="Skilvul Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Advanced Python Programming</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Skilvul</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/rakamin1.png', 'img')">
+                                <img src="assets/rakamin1.png" alt="Rakamin Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Kickstart Data Science Journey</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Rakamin</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/rakamin2.png', 'img')">
+                                <img src="assets/rakamin2.png" alt="Rakamin Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Kickstart Design Thinking Journey</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Rakamin</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/rakamin3.png', 'img')">
+                                <img src="assets/rakamin3.png" alt="Rakamin Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Achievement Kickstart Data Science Journey</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Rakamin</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/rakamin4.png', 'img')">
+                                <img src="assets/rakamin4.png" alt="Rakamin Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Achievement Kickstart Fullstack Web Development Journey</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Rakamin</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/coursera1.png', 'img')">
+                                <img src="assets/coursera1.png" alt="Coursera Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Build a free website with WordPress</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Coursera</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/coursera2.png', 'img')">
+                                <img src="assets/coursera2.png" alt="Coursera Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Getting Started with Microsoft Excel</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Coursera</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/coursera3.png', 'img')">
+                                <img src="assets/coursera3.png" alt="Coursera Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Using Basic Formulas and Functions in MicrosoftExcel</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Coursera</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/coursera4.png', 'img')">
+                                <img src="assets/coursera4.png" alt="Coursera Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Google Ads for Beginners</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Coursera</p>
+                            </div>
+                        </div>
+                        <div class="cert-slide w-full flex-shrink-0 p-8 md:p-12 flex flex-col md:flex-row items-center justify-center gap-8">
+                            <div class="relative w-full md:w-1/2 h-64 bg-slate-50 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex justify-center items-center overflow-hidden group/preview cursor-zoom-in" onclick="openCertModal('assets/coursera5.png', 'img')">
+                                <img src="assets/coursera5.png" alt="Coursera Certificate" class="max-h-full w-auto object-contain">
+                                <div class="absolute inset-0 bg-slate-900/0 group-hover/preview:bg-slate-900/10 transition-colors flex items-center justify-center">
+                                    <div class="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-slate-800 opacity-0 group-hover/preview:opacity-100 transition-opacity shadow-lg">
+                                        <i class="ph-bold ph-arrows-out text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center md:text-left md:w-1/2">
+                                <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center text-green-500 mb-4 mx-auto md:mx-0"><i class="ph-fill ph-certificate text-2xl"></i></div>
+                                <h4 class="text-2xl font-extrabold text-slate-900 mb-2">Introduction to Data Analysis using Microsoft Excel</h4>
+                                <p class="text-sm text-slate-500 font-bold uppercase tracking-wider mb-4">Coursera</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="prevCert()" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2 lg:-translate-x-full lg:-ml-6 w-12 h-12 bg-white rounded-full shadow-xl border border-slate-200 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 z-10 scale-90 group-hover:scale-100">
+                    <i class="ph-bold ph-caret-left text-xl"></i>
+                </button>
+                <button onclick="nextCert()" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 lg:translate-x-full lg:-mr-6 w-12 h-12 bg-white rounded-full shadow-xl border border-slate-200 flex items-center justify-center text-blue-600 hover:bg-blue-600 hover:text-white transition-all opacity-0 group-hover:opacity-100 z-10 scale-90 group-hover:scale-100">
+                    <i class="ph-bold ph-caret-right text-xl"></i>
+                </button>
+                
+                <div class="flex justify-center gap-2 mt-6 flex-wrap" id="cert-dots">
+                    </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="cert-modal" class="fixed inset-0 z-[999999] bg-slate-950/90 backdrop-blur-md hidden items-center justify-center opacity-0 transition-opacity duration-300 p-4" onclick="closeCertModal(event)">
+        <button onclick="closeCertModal(event, true)" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-red-500 hover:scale-110 transition-all z-[1000] outline-none">
+            <i class="ph-bold ph-x text-2xl"></i>
+        </button>
+        
+        <div id="cert-modal-content" class="w-full max-w-4xl h-[85vh] flex items-center justify-center transform scale-95 transition-transform duration-300 pointer-events-none relative rounded-xl overflow-hidden shadow-2xl bg-transparent">
+            </div>
+    </div>
+
+    <!-- FULL SCREEN CERTIFICATE MODAL (PENTING: Letakkan di paling bawah body sebelum script) -->
+    <div id="cert-modal" class="fixed inset-0 z-[999999] bg-slate-950/90 backdrop-blur-md hidden items-center justify-center opacity-0 transition-opacity duration-300 p-4" onclick="closeCertModal(event)">
+        <button onclick="closeCertModal(event, true)" class="absolute top-6 right-6 w-12 h-12 flex items-center justify-center rounded-full bg-white/10 text-white hover:bg-red-500 hover:scale-110 transition-all z-10">
+            <i class="ph-bold ph-x text-2xl"></i>
+        </button>
+        <img id="cert-modal-img" src="" alt="Full Certificate" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl transform scale-95 transition-transform duration-300 pointer-events-none">
+    </div>
+
+    <!-- Creative Portfolio CTA -->
+    <section class="py-12 bg-white reveal fade-up">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-8 md:p-12 text-center overflow-hidden shadow-xl">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-blue-500 rounded-full blur-[80px] opacity-40"></div>
+                <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-teal-400 rounded-full blur-[80px] opacity-40"></div>
+                <div class="relative z-10">
+                    <span class="bg-white/10 text-blue-200 font-bold px-4 py-1.5 rounded-full text-xs uppercase tracking-widest border border-white/10 mb-5 inline-block">Another Side of Me</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight">Curious about my creative side?</h2>
+                    <p class="text-slate-300 text-base mb-8 max-w-xl mx-auto">Check out my personal portfolio for technical explorations, design experiments, and other fun projects outside the corporate context.</p>
+                    <a href="casual.html" class="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-3.5 rounded-full font-extrabold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                        View Personal Portfolio <i class="ph-bold ph-sparkle"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-50 border-t border-slate-200 py-14">
+        <div class="container mx-auto px-6 max-w-4xl">
+
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500 text-[10px] font-bold uppercase tracking-widest mb-5 shadow-sm">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+                    </span>
+                    Open to Opportunities
+                </div>
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-3 tracking-tight">Let's build something together.</h2>
+                <p class="text-slate-500 text-sm max-w-md mx-auto leading-relaxed">
+                    Available for internship, full-time, or freelance projects. Feel free to reach out — I'd love to connect.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+                <!-- Email -->
+                <button onclick="copyEmail()" class="footer-contact-card group">
+                    <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors mx-auto">
+                        <i class="ph-fill ph-envelope-simple text-xl"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Email</p>
+                    <p class="text-sm font-bold text-slate-700 group-hover:text-blue-600 transition-colors break-all">ysitanggang096@gmail.com</p>
+                    <p id="copy-tooltip" class="text-[10px] text-teal-500 font-bold mt-1 h-4 transition-opacity opacity-0">Copied!</p>
+                </button>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/" target="_blank" class="footer-contact-card group">
+                    <div class="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-3 group-hover:bg-blue-600 group-hover:text-white transition-colors mx-auto">
+                        <i class="ph-fill ph-linkedin-logo text-xl"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">LinkedIn</p>
+                    <p class="text-sm font-bold text-slate-700 group-hover:text-blue-600 transition-colors">Yessi Sitanggang</p>
+                    <p class="text-[10px] text-slate-400 mt-1">View Profile <i class="ph-bold ph-arrow-up-right"></i></p>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/" target="_blank" class="footer-contact-card group">
+                    <div class="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700 mb-3 group-hover:bg-slate-800 group-hover:text-white transition-colors mx-auto">
+                        <i class="ph-fill ph-github-logo text-xl"></i>
+                    </div>
+                    <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">GitHub</p>
+                    <p class="text-sm font-bold text-slate-700 group-hover:text-slate-900 transition-colors">ecii123</p>
+                    <p class="text-[10px] text-slate-400 mt-1">View Repos <i class="ph-bold ph-arrow-up-right"></i></p>
+                </a>
+            </div>
+
+            <div class="border-t border-slate-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-sm font-bold text-slate-400 flex items-center gap-1">
+                    &copy; 2026 Yessi Sitanggang. Made with <i class="ph-fill ph-heart text-red-400"></i>
+                </p>
+                <a href="#about" class="text-xs font-bold text-slate-400 hover:text-blue-600 flex items-center gap-1 transition-colors">
+                    Back to top <i class="ph-bold ph-arrow-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CASE STUDY MODAL (METODE STAR) -->
+    <div id="case-study-modal" class="fixed inset-0 z-[99999] bg-slate-900/60 backdrop-blur-sm hidden items-center justify-center opacity-0 transition-opacity duration-300 p-4">
+        <div class="bg-white rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300" id="modal-content-box">
+            <div class="sticky top-0 bg-white/90 backdrop-blur-md border-b border-slate-100 px-8 py-5 flex justify-between items-center z-10">
+                <h3 class="text-2xl font-extrabold text-slate-900" id="modal-title">Project Title</h3>
+                <button onclick="closeCaseStudy()" class="w-8 h-8 flex items-center justify-center rounded-full bg-slate-100 text-slate-500 hover:bg-red-100 hover:text-red-500 transition-colors">
+                    <i class="ph-bold ph-x"></i>
+                </button>
+            </div>
+            <div class="p-8 space-y-6">
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-blue-600 mb-2 border-l-2 border-blue-600 pl-2">Situation</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed" id="modal-situation"></p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-orange-500 mb-2 border-l-2 border-orange-500 pl-2">Task (My Role)</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed" id="modal-task"></p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-teal-500 mb-2 border-l-2 border-teal-500 pl-2">Action</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed" id="modal-action"></p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-purple-600 mb-2 border-l-2 border-purple-600 pl-2">Result</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed font-semibold" id="modal-result"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/pro.js"></script>
+</body>
+</html>

@@ -1,1169 +1,367 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yessi Sitanggang - Personal Portfolio ✨</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Yessi Sitanggang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* =============================================
-           TAMBAHAN CSS UNTUK SECTION BARU
-           ============================================= */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        /* ---- Download CV Button ---- */
-        .magical-btn.cv-btn {
-            background: linear-gradient(135deg, #9370DB 0%, #8A2BE2 100%);
-            color: #fff;
-            box-shadow: 0 15px 35px rgba(147,112,219,0.4);
-        }
-        .magical-btn.cv-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(147,112,219,0.5);
-        }
-
-        /* ---- Hero CTA: tombol tidak wrap, teks satu baris ---- */
-        .hero-cta {
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
-            gap: 0.85rem;
-        }
-        .hero-cta .magical-btn {
-            white-space: nowrap;
-            padding: 0.75rem 1.5rem;
-            font-size: 0.88rem;
-            flex-shrink: 0;
-        }
-        .hero-cta .magical-btn i {
-            font-size: 0.8rem;
-        }
-
-        /* ---- Scroll magic: posisi lebih jauh dari tombol ---- */
-        .scroll-magic {
-            bottom: 1.2rem;
-        }
-        .scroll-magic .magic-wand {
-            display: none; /* hapus icon wand agar tidak crowded */
-        }
-
-        /* ---- About section: kolom kanan align ke atas (flex-start) ---- */
-        .about-content {
-            align-items: flex-start !important;
-        }
-        .about-visual {
-            position: sticky;
-            top: 100px;
-        }
-
-        /* ---- Certifications Section ---- */
-        .certifications-section {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F0F0FF 100%);
-        }
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .cert-card {
-            background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(200,162,200,0.3);
-            border-radius: 24px;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(200,162,200,0.15);
-            position: relative;
+        html, body {
+            width: 100%; height: 100dvh;
             overflow: hidden;
-        }
-        .cert-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            border-radius: 24px 24px 0 0;
-        }
-        .cert-card.oracle::before  { background: linear-gradient(135deg, #C00 0%, #F00 100%); }
-        .cert-card.coursera::before { background: linear-gradient(135deg, #0056D3 0%, #00AAFF 100%); }
-        .cert-card.microsoft::before { background: linear-gradient(135deg, #00A4EF 0%, #7FBA00 100%); }
-        .cert-card.myskill::before  { background: linear-gradient(135deg, #FF6B6B 0%, #FFB347 100%); }
-        .cert-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(147,112,219,0.2);
-        }
-        .cert-issuer-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 4px 12px;
-            border-radius: 20px;
-            width: fit-content;
-        }
-        .cert-issuer-badge.oracle  { background: #FDECEA; color: #C00; }
-        .cert-issuer-badge.coursera { background: #E8F1FF; color: #0056D3; }
-        .cert-issuer-badge.microsoft { background: #E6F4FF; color: #00A4EF; }
-        .cert-issuer-badge.myskill  { background: #FFF0E6; color: #FF6B35; }
-        .cert-name {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #4A4A4A;
-            line-height: 1.4;
-        }
-        .cert-meta {
-            font-size: 0.82rem;
-            color: #6B6B6B;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .cert-meta i { color: #C8A2C8; font-size: 0.78rem; }
-        .cert-highlight {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #9370DB;
-            background: #F0E8FF;
-            border-radius: 8px;
-            padding: 4px 10px;
-            width: fit-content;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
-        /* ---- Leadership & Organizations Section ---- */
-        .leadership-section {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, #F8F0FF 0%, #E6E6FA 100%);
+        /* ─── LAYOUT ─── */
+        .container {
+            display: flex;
+            width: 100vw;
+            height: 100dvh;
         }
-        .leadership-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        .leadership-card {
-            background: rgba(255,255,255,0.75);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(200,162,200,0.3);
-            border-radius: 24px;
-            padding: 2.5rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 24px rgba(200,162,200,0.15);
+
+        .side {
+            flex: 1;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 5rem 4.5rem;
             overflow: hidden;
+            text-decoration: none;
+            transition: flex 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            cursor: pointer;
         }
-        .leadership-card::after {
-            content: '';
+
+        .side:hover { flex: 1.4; }
+
+        /* ─── LEFT: WHITE / PROFESSIONAL ─── */
+        .side-pro {
+            background: #ffffff;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        /* ─── RIGHT: NEAR-BLACK / CREATIVE ─── */
+        .side-cre {
+            background: #0c0e14;
+        }
+
+        /* ─── DECORATIVE SHAPES (subtle geometry) ─── */
+        .shape {
             position: absolute;
-            bottom: -40px; right: -40px;
-            width: 120px; height: 120px;
-            background: var(--gradient-lilac);
             border-radius: 50%;
-            opacity: 0.07;
+            pointer-events: none;
+            transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease;
+            z-index: 0;
         }
-        .leadership-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(147,112,219,0.2);
+
+        /* Pro shapes — blue/slate tones on white */
+        .pro-circle-1 {
+            width: 500px; height: 500px;
+            background: #eff6ff;
+            top: -160px; right: -160px;
+            opacity: 0.9;
         }
-        .leadership-icon {
-            width: 64px; height: 64px;
-            background: linear-gradient(135deg, #C8A2C8 0%, #DDA0DD 100%);
-            border-radius: 18px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.25rem;
-            box-shadow: 0 8px 20px rgba(200,162,200,0.3);
+        .pro-circle-2 {
+            width: 200px; height: 200px;
+            background: #dbeafe;
+            bottom: 80px; right: 60px;
+            opacity: 0.6;
         }
-        .leadership-period {
-            display: inline-block;
-            font-size: 0.78rem;
-            font-weight: 600;
-            color: #FF69B4;
-            background: #FFF0F5;
-            border-radius: 20px;
-            padding: 3px 12px;
-            margin-bottom: 0.75rem;
+        .pro-dot {
+            width: 12px; height: 12px;
+            background: #2563eb;
+            top: 3.2rem; right: 4.5rem;
+            border-radius: 50%;
+            opacity: 0.9;
         }
-        .leadership-card h3 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.6rem;
-            color: #9370DB;
-            margin-bottom: 0.25rem;
+
+        .side-pro:hover .pro-circle-1 { transform: scale(1.12) translate(20px, -20px); }
+        .side-pro:hover .pro-circle-2 { transform: scale(1.3); opacity: 1; }
+
+        /* Creative shapes — indigo/violet tones on dark */
+        .cre-circle-1 {
+            width: 460px; height: 460px;
+            background: #1e1b4b;
+            bottom: -140px; left: -140px;
+            opacity: 0.9;
         }
-        .leadership-card h4 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #C8A2C8;
-            margin-bottom: 1rem;
+        .cre-circle-2 {
+            width: 180px; height: 180px;
+            background: #312e81;
+            top: 80px; left: 60px;
+            opacity: 0.5;
         }
-        .leadership-card ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
+        .cre-dot {
+            width: 12px; height: 12px;
+            background: #818cf8;
+            bottom: 3.2rem; left: 4.5rem;
+            border-radius: 50%;
+            opacity: 0.9;
         }
-        .leadership-card ul li {
-            font-size: 0.9rem;
-            color: #6B6B6B;
-            line-height: 1.55;
-            padding-left: 1.25rem;
+
+        .side-cre:hover .cre-circle-1 { transform: scale(1.12) translate(-20px, 20px); }
+        .side-cre:hover .cre-circle-2 { transform: scale(1.3); opacity: 0.8; }
+
+        /* ─── CONTENT ─── */
+        .content {
             position: relative;
-        }
-        .leadership-card ul li::before {
-            content: '🌸';
-            position: absolute;
-            left: 0;
-            font-size: 0.7rem;
-            top: 2px;
-        }
-        .leadership-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            margin-top: 1.25rem;
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: #fff;
-            background: linear-gradient(135deg, #9370DB 0%, #DDA0DD 100%);
-            padding: 5px 14px;
-            border-radius: 20px;
+            z-index: 2;
         }
 
-        /* ---- Skills Tags (tambahan di About section) ---- */
-        .skills-tags-wrap {
-            margin-top: 2rem;
-        }
-        .skills-tags-wrap h4 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.4rem;
-            color: #9370DB;
-            margin-bottom: 1rem;
-        }
-        .tags-group {
-            margin-bottom: 1rem;
-        }
-        .tags-group-label {
-            font-size: 0.75rem;
+        /* BADGE */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 5px 14px 5px 10px;
+            border-radius: 999px;
+            font-size: 0.72rem;
             font-weight: 700;
+            letter-spacing: 0.07em;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
-            color: #C8A2C8;
-            margin-bottom: 0.5rem;
+            margin-bottom: 2.2rem;
+            transition: all 0.5s ease;
         }
-        .tags-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .skill-tag {
-            font-size: 0.78rem;
-            font-weight: 500;
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid rgba(200,162,200,0.4);
-            background: rgba(255,255,255,0.7);
-            color: #4A4A4A;
-            transition: all 0.2s;
-        }
-        .skill-tag:hover {
-            background: linear-gradient(135deg, #C8A2C8, #DDA0DD);
-            color: #fff;
-            border-color: transparent;
-        }
-        .skill-tag.purple { border-color: rgba(147,112,219,0.4); }
-        .skill-tag.pink   { border-color: rgba(255,105,180,0.4); }
 
-        /* ---- Timeline: Scrum badge ---- */
-        .scrum-badge {
+        .badge-pro {
+            background: #eff6ff;
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+        }
+        .side-pro:hover .badge-pro {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+
+        .badge-cre {
+            background: rgba(129,140,248,0.1);
+            color: #a5b4fc;
+            border: 1px solid rgba(129,140,248,0.2);
+        }
+        .side-cre:hover .badge-cre {
+            background: #6366f1;
+            color: #ffffff;
+            border-color: #6366f1;
+        }
+
+        .badge-pulse {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        .badge-pro .badge-pulse { background: #2563eb; }
+        .side-pro:hover .badge-pro .badge-pulse { background: #fff; }
+        .badge-cre .badge-pulse { background: #a5b4fc; }
+        .side-cre:hover .badge-cre .badge-pulse { background: #fff; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.75); }
+        }
+
+        /* TITLE */
+        .title {
+            font-size: clamp(3.8rem, 6.5vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            margin-bottom: 1.4rem;
+            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .title-pro { color: #cbd5e1; }
+        .side-pro:hover .title-pro {
+            color: #0f172a;
+        }
+
+        .title-cre { color: rgba(255,255,255,0.18); }
+        .side-cre:hover .title-cre {
+            color: #ffffff;
+        }
+
+        /* DESC */
+        .desc {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            max-width: 340px;
+            font-weight: 400;
+            transition: color 0.5s ease;
+        }
+
+        .desc-pro { color: #94a3b8; }
+        .side-pro:hover .desc-pro { color: #475569; }
+
+        .desc-cre { color: rgba(255,255,255,0.25); }
+        .side-cre:hover .desc-cre { color: rgba(255,255,255,0.65); }
+
+        /* CTA */
+        .cta {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            font-size: 0.75rem;
+            gap: 12px;
+            font-size: 0.82rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #FF69B4, #DDA0DD);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: all 0.5s ease;
+        }
+
+        .cta-pro { color: #cbd5e1; }
+        .side-pro:hover .cta-pro { color: #2563eb; }
+
+        .cta-cre { color: rgba(255,255,255,0.2); }
+        .side-cre:hover .cta-cre { color: #a5b4fc; }
+
+        .cta-icon {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            border: 1.5px solid currentColor;
+            display: flex; align-items: center; justify-content: center;
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), background 0.4s ease;
+        }
+
+        .side-pro:hover .cta-pro .cta-icon {
+            transform: translateX(8px);
+            background: #2563eb;
+            border-color: #2563eb;
             color: #fff;
-            padding: 3px 12px;
-            border-radius: 20px;
-            margin-top: 0.5rem;
+        }
+        .side-cre:hover .cta-cre .cta-icon {
+            transform: translateX(8px);
+            background: #6366f1;
+            border-color: #6366f1;
+            color: #fff;
         }
 
-        /* ---- Hero Stats responsive tweak ---- */
-        .hero-stats .stat-item:last-child .stat-number { font-size: 1.5rem; }
-
-        /* Override hero-stats & cta margin agar tombol tidak mepet scroll text */
-        .hero-stats {
-            margin-bottom: 1.5rem !important;
+        /* ─── DIM OPPOSITE SIDE ─── */
+        .container:has(.side-pro:hover) .side-cre {
+            opacity: 0.3;
+            filter: grayscale(60%);
+            transition: opacity 0.7s ease, filter 0.7s ease;
         }
-        .hero-cta {
-            margin-bottom: 2.5rem;
-        }
-
-        /* ---- Responsive for new sections ---- */
-        @media (max-width: 768px) {
-            .cert-grid, .leadership-grid {
-                grid-template-columns: 1fr;
-            }
-            .certifications-section,
-            .leadership-section {
-                padding: 5rem 0;
-            }
-        }
-        @media (max-width: 1366px) {
-            .certifications-section,
-            .leadership-section {
-                padding: 6rem 0;
-            }
-            .cert-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-                gap: 1.5rem;
-            }
-            .leadership-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 1.5rem;
-            }
-            /* tombol hero lebih kecil di layar 1366px */
-            .hero-cta .magical-btn {
-                padding: 0.65rem 1.1rem;
-                font-size: 0.8rem;
-                gap: 0.35rem;
-            }
+        .container:has(.side-cre:hover) .side-pro {
+            opacity: 0.3;
+            filter: grayscale(60%);
+            transition: opacity 0.7s ease, filter 0.7s ease;
         }
 
-        /* Mobile: izinkan wrap hanya di layar kecil */
-        @media (max-width: 600px) {
-            .hero-cta {
-                flex-wrap: wrap;
-            }
-            .hero-cta .magical-btn {
-                flex: 1 1 auto;
-                justify-content: center;
-            }
-            .about-visual {
-                position: static;
-            }
+        /* ─── CENTER MARKER ─── */
+        .center-mark {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .center-badge {
+            width: 42px; height: 42px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 0.58rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            color: #334155;
+        }
+
+        /* ─── VERTICAL NAME ─── */
+        .vertical-name {
+            position: absolute;
+            bottom: 3rem;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            writing-mode: vertical-rl;
+            transition: opacity 0.5s ease;
+            z-index: 2;
+        }
+
+        .vname-pro { right: 2.5rem; color: #e2e8f0; }
+        .side-pro:hover .vname-pro { color: #94a3b8; }
+
+        .vname-cre { left: 2.5rem; color: rgba(255,255,255,0.1); writing-mode: vertical-lr; transform: rotate(180deg); }
+        .side-cre:hover .vname-cre { color: rgba(255,255,255,0.25); }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 680px) {
+            html, body { overflow-y: auto; }
+            .container { flex-direction: column; height: auto; }
+            .side { flex: none !important; min-height: 52dvh; justify-content: flex-start; padding: 3rem 2.5rem; }
+            .center-mark { display: none; }
+            .vertical-name { display: none; }
+            .title { font-size: 3.5rem; }
+            .container:has(.side-pro:hover) .side-cre,
+            .container:has(.side-cre:hover) .side-pro { opacity: 1; filter: none; }
         }
     </style>
 </head>
 <body>
-    <!-- Magical Cursor -->
-    <div class="magical-cursor">
-        <div class="cursor-sparkle"></div>
-        <div class="cursor-trail"></div>
-    </div>
 
-    <!-- Floating Magic Elements -->
-    <div class="magic-container">
-        <div class="floating-hearts"></div>
-        <div class="floating-stars"></div>
-        <div class="floating-butterflies"></div>
-        <div class="magical-sparkles"></div>
-    </div>
+<div class="container">
 
-    <!-- Navigation -->
-    <nav class="dreamy-nav">
-        <div class="nav-container">
-            <div class="logo">
-                <span class="logo-text">Yessi</span>
-                <span class="logo-accent">Sitanggang</span>
-                <div class="logo-sparkle">✨</div>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#leadership" class="nav-link">Leadership</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    <!-- LEFT: PROFESSIONAL -->
+    <a href="professional.html" class="side side-pro">
+        <div class="shape pro-circle-1"></div>
+        <div class="shape pro-circle-2"></div>
+        <div class="shape pro-dot"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="hero-background">
-            <div class="gradient-orbs"></div>
-            <div class="floating-petals"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="magical-greeting">
-                    <span class="greeting-emoji">🌸</span>
-                    <span class="greeting-text">Hello, I'm Yessi!</span>
-                    <span class="greeting-emoji">🦋</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="title-line">Mobile Developer</span>
-                    <span class="title-line">& Fullstack Developer</span>
-                </h1>
-                <p class="hero-subtitle">Informatics Graduate from Institut Teknologi Del · Creating beautiful digital experiences with modern technologies and user-centered design ✨</p>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">3.52</div>
-                        <div class="stat-label">GPA / 4.00</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">10+</div>
-                        <div class="stat-label">Projects</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">Internships</div>
-                    </div>
-                </div>
-                <div class="hero-cta">
-                    <a href="#portfolio" class="magical-btn primary">
-                        <span>View My Work</span>
-                        <i class="fas fa-magic"></i>
-                    </a>
-                    <!-- ✅ TAMBAHAN: Tombol Download CV -->
-                    <a href="assets/Yessi_Sitanggang_CV_ODP.pdf" download class="magical-btn cv-btn">
-                        <span>Download CV</span>
-                        <i class="fas fa-download"></i>
-                    </a>
-                    <a href="#contact" class="magical-btn secondary">
-                        <span>Let's Connect</span>
-                        <i class="fas fa-heart"></i>
-                    </a>
-                </div>
+        <div class="content">
+            <div class="badge badge-pro">
+                <span class="badge-pulse"></span>
+                PROFESSIONAL PROFILE
             </div>
-            <div class="hero-visual">
-                <div class="magical-avatar">
-                    <div class="avatar-glow"></div>
-                    <div class="avatar-frame">
-                        <img src="assets/Profil4.jpg" alt="Yessi Sitanggang Profile Photo">
-                        <div class="avatar-sparkles"></div>
-                    </div>
-                    <div class="floating-elements">
-                        <div class="element heart">💜</div>
-                        <div class="element star">⭐</div>
-                        <div class="element flower">🌸</div>
-                        <div class="element butterfly">🦋</div>
-                    </div>
+            <h1 class="title title-pro">Professional</h1>
+            <p class="desc desc-pro">Bridging technical excellence with strategic business impact. Dedicated to building robust software and innovative solutions for complex real-world challenges.</p>
+            <div class="cta cta-pro">
+                Explore
+                <div class="cta-icon">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
                 </div>
             </div>
         </div>
-        <div class="scroll-magic" style="bottom:1rem; gap:0.4rem;">
-            <span style="font-size:1.2rem;">✨</span>
-            <span>Scroll for magic</span>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">✨ About Me ✨</span>
-                <h2 class="section-title">My Journey</h2>
+        <span class="vertical-name vname-pro">Yessi Sitanggang</span>
+    </a>
+
+    
+
+    <!-- RIGHT: CREATIVE -->
+    <a href="casual.html" class="side side-cre">
+        <div class="shape cre-circle-1"></div>
+        <div class="shape cre-circle-2"></div>
+        <div class="shape cre-dot"></div>
+
+        <div class="content">
+            <div class="badge badge-cre">
+                <span class="badge-pulse"></span>
+                Personal · Creative
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="dreamy-text-block">
-                        <div class="block-icon">🎓</div>
-                        <h3>Academic Excellence</h3>
-                        <!-- ✅ DIPERBARUI: GPA 3.52, tambah info beasiswa merit -->
-                        <p>Informatics graduate candidate from Institut Teknologi Del with a GPA of 3.52/4.00 — ranked among merit scholarship recipients for three consecutive semesters. Thesis defense completed; awaiting official graduation (Sep 2026).</p>
-                    </div>
-                    <div class="dreamy-text-block">
-                        <div class="block-icon">💻</div>
-                        <h3>Technical Expertise</h3>
-                        <p>Experienced in translating user and business needs into mobile and web solutions using Flutter, Dart, Kotlin, Laravel, C#, and more. Strong foundation in UI/UX, REST API integration, databases, and Functional Specification Document implementation.</p>
-                    </div>
-                    <!-- ✅ TAMBAHAN: blok kepemimpinan yang sebelumnya tidak ada -->
-                    <div class="dreamy-text-block">
-                        <div class="block-icon">👑</div>
-                        <h3>Leadership & Collaboration</h3>
-                        <p>Demonstrated leadership as a Scrum Team Leader across multiple projects, lecturer assistant for Basic Mathematics I & II, student mentor (Kakak Asuh), and organization member — building strong communication, team coordination, and user-driven decision-making skills.</p>
-                    </div>
-                    <div class="dreamy-text-block">
-                        <div class="block-icon">🌟</div>
-                        <h3>Professional Growth</h3>
-                        <p>Completed three sequential internships at PT. Tera Multi Wahana, PT. Suzuki Finance Indonesia, and Zonaebt.com — gaining real-world experience in cross-functional collaboration, system development, and agile workflows. Passionate about creating meaningful solutions and continuously learning.</p>
-                    </div>
-
-                    <!-- ✅ TAMBAHAN: Skills tags yang sebelumnya tidak ada di about -->
-                    <div class="skills-tags-wrap">
-                        <h4>🛠️ Skills & Tech Stack</h4>
-                        <div class="tags-group">
-                            <div class="tags-group-label">Product & Business</div>
-                            <div class="tags-row">
-                                <span class="skill-tag purple">System Requirement Analysis</span>
-                                <span class="skill-tag purple">Business Process</span>
-                                <span class="skill-tag purple">Agile / Scrum</span>
-                                <span class="skill-tag purple">Sprint Planning</span>
-                                <span class="skill-tag purple">Backlog Management</span>
-                                <span class="skill-tag purple">User-Centered Design</span>
-                            </div>
-                        </div>
-                        <div class="tags-group">
-                            <div class="tags-group-label">Technical</div>
-                            <div class="tags-row">
-                                <span class="skill-tag">Flutter</span>
-                                <span class="skill-tag">Dart</span>
-                                <span class="skill-tag">Kotlin</span>
-                                <span class="skill-tag">C#</span>
-                                <span class="skill-tag">Laravel Blade</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">SQL Server</span>
-                                <span class="skill-tag">MySQL</span>
-                                <span class="skill-tag">Firebase</span>
-                                <span class="skill-tag">REST API</span>
-                                <span class="skill-tag">Figma</span>
-                                <span class="skill-tag">Git</span>
-                            </div>
-                        </div>
-                        <div class="tags-group">
-                            <div class="tags-group-label">Soft Skills</div>
-                            <div class="tags-row">
-                                <span class="skill-tag pink">Leadership</span>
-                                <span class="skill-tag pink">Team Coordination</span>
-                                <span class="skill-tag pink">Analytical Thinking</span>
-                                <span class="skill-tag pink">Problem-Solving</span>
-                                <span class="skill-tag pink">Adaptability</span>
-                                <span class="skill-tag pink">Resilience</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="skills-constellation">
-                        <div class="skill-star" data-skill="Frontend Development" data-level="95">
-                            <div class="star-icon">💻</div>
-                            <span>Frontend Development</span>
-                            <div class="skill-glow"></div>
-                        </div>
-                        <div class="skill-star" data-skill="UI/UX Design" data-level="88">
-                            <div class="star-icon">🎨</div>
-                            <span>UI/UX Design</span>
-                            <div class="skill-glow"></div>
-                        </div>
-                        <div class="skill-star" data-skill="Mobile Development" data-level="85">
-                            <div class="star-icon">📱</div>
-                            <span>Mobile Development</span>
-                            <div class="skill-glow"></div>
-                        </div>
-                        <!-- ✅ DIUBAH: dari "Web Developer" jadi "Scrum Team Leader" -->
-                        <div class="skill-star" data-skill="Scrum Leadership" data-level="90">
-                            <div class="star-icon">👑</div>
-                            <span>Scrum Leadership</span>
-                            <div class="skill-glow"></div>
-                        </div>
-                    </div>
-                    <div class="dreamy-card">
-                        <div class="card-aurora"></div>
-                        <div class="card-content">
-                            <div class="about-image">
-                                <img src="assets/gambar1.jpg" alt="Yessi at work">
-                            </div>
-                            <div class="achievement-garden">
-                                <div class="achievement-flower">
-                                    <div class="flower-center">10+</div>
-                                    <div class="flower-petals">Projects</div>
-                                </div>
-                                <!-- ✅ DIUBAH: dari "2+ Years" jadi "3 Internships" -->
-                                <div class="achievement-flower">
-                                    <div class="flower-center">3</div>
-                                    <div class="flower-petals">Internships</div>
-                                </div>
-                                <div class="achievement-flower">
-                                    <div class="flower-center">3.52</div>
-                                    <div class="flower-petals">GPA</div>
-                                </div>
-                            </div>
-                            <div class="magical-quote">
-                                <p>"Experienced in translating user and business needs into digital solutions — ready to grow and lead with purpose 💜"</p>
-                            </div>
-                        </div>
-                    </div>
+            <h1 class="title title-cre">Creative</h1>
+            <p class="desc desc-cre"> Where imagination meets code. A space for technical experiments, design concepts, and building things for the love of it.</p>
+            <div class="cta cta-cre">
+                Explore
+                <div class="cta-icon">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">🎨 Portfolio 🎨</span>
-                <h2 class="section-title">My Projects</h2>
-            </div>
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">✨ All Projects</button>
-                <button class="filter-btn" data-filter="web">🌐 Web Development</button>
-                <button class="filter-btn" data-filter="mobile">📱 Mobile Apps</button>
-                <button class="filter-btn" data-filter="design">🎨 UI/UX Design</button>
-            </div>
-            <div class="portfolio-gallery">
-                <!-- ✅ DIPERBARUI: Deskripsi SIMBA web diperkaya dengan peran Scrum Team Leader -->
-                <div class="portfolio-item magical-project" data-category="web">
-                    <div class="project-frame">
-                        <img src="assets/Dashboard.png" alt="SIMBA - Student Management System">
-                        <div class="project-overlay">
-                            <div class="project-magic">
-                                <h3>SIMBA (Web) — Sistem Informasi Manajemen Bimbingan Mahasiswa</h3>
-                                <p>Led as <strong>Scrum Team Leader</strong> to deliver web & Android apps within a 5-month timeline. Features: violation tracking, merit points, counseling, and academic advising.</p>
-                                <div class="project-sparkles">
-                                    <span>Scrum Leader</span>
-                                    <span>Laravel-Blade</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                </div>
-                            </div>
-                            <div class="project-actions">
-                                <button class="project-btn" onclick="window.open('https://github.com/MariaNasution/SIMBA.git', '_blank')">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-glow"></div>
-                    </div>
-                </div>
+        <span class="vertical-name vname-cre">Institut Teknologi Del</span>
+    </a>
 
-                <div class="portfolio-item magical-project" data-category="mobile">
-                    <div class="project-frame">
-                        <img src="assets/portofolio.jpg" alt="Portofolioku Android App">
-                        <div class="project-overlay">
-                            <div class="project-magic">
-                                <h3>"Portofolioku" Android App</h3>
-                                <p>Personal portfolio Android application with adaptive layouts supporting various screen sizes and modern UI patterns.</p>
-                                <div class="project-sparkles">
-                                    <span>Kotlin</span>
-                                    <span>Jetpack Compose</span>
-                                    <span>Android</span>
-                                    <span>Responsive</span>
-                                </div>
-                            </div>
-                            <div class="project-actions">
-                                <button class="project-btn" onclick="window.open('https://github.com/ecii123/Aplikasi_Portofolioku.git', '_blank')">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-glow"></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item magical-project" data-category="web">
-                    <div class="project-frame">
-                        <img src="assets/kenangansenja.jpg" alt="Kedai Kopi Kenangan Senja">
-                        <div class="project-overlay">
-                            <div class="project-magic">
-                                <h3>Kedai Kopi Kenangan Senja</h3>
-                                <p>High-performance responsive coffee shop website with smooth interactions and cross-browser accessibility.</p>
-                                <div class="project-sparkles">
-                                    <span>Laravel-Blade</span>
-                                    <span>CSS</span>
-                                    <span>JavaScript</span>
-                                    <span>Responsive</span>
-                                </div>
-                            </div>
-                            <div class="project-actions">
-                                <button class="project-btn" onclick="window.open('https://github.com/ecii123/kedai-kopi-kenangan-senja.git', '_blank')">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-glow"></div>
-                    </div>
-                </div>
-
-                <!-- ✅ DIPERBARUI: SITA diperkaya dengan info Scrum Leader & nilai A -->
-                <div class="portfolio-item magical-project" data-category="web">
-                    <div class="project-frame">
-                        <img src="assets/sita.jpg" alt="SITA - Final Project Management">
-                        <div class="project-overlay">
-                            <div class="project-magic">
-                                <h3>SITA — Sistem Informasi Tingkat Akhir</h3>
-                                <p>Led Scrum team to deliver a Final Project Management System in 1 month. Designed in Figma, built with Laravel-Blade. Achieved <strong>grade A</strong> for project excellence.</p>
-                                <div class="project-sparkles">
-                                    <span>Scrum Leader</span>
-                                    <span>Figma</span>
-                                    <span>Laravel-Blade</span>
-                                    <span>Grade A ⭐</span>
-                                </div>
-                            </div>
-                            <div class="project-actions">
-                                <button class="project-btn" onclick="window.open('https://github.com/william-napitupulu/SITA.git', '_blank')">
-                                    <i class="fab fa-github"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-glow"></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item magical-project" data-category="mobile">
-                    <div class="project-frame">
-                        <img src="assets/Beranda.png" alt="SIMBA Android">
-                        <div class="project-overlay">
-                            <div class="project-magic">
-                                <h3>SIMBA (Android) — Sistem Informasi Manajemen Bimbingan Mahasiswa</h3>
-                                <p>Android version of SIMBA using Kotlin & Jetpack Compose — replicating core web features with real-time violation tracking and academic advising.</p>
-                                <div class="project-sparkles">
-                                    <span>Kotlin</span>
-                                    <span>Jetpack Compose</span>
-                                    <span>Android</span>
-                                </div>
-                            </div>
-                            <div class="project-actions">
-                                <button class="project-btn" onclick="window.open('https://github.com/pardzheri/pam-2025-simba.git', '_blank')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-glow"></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item magical-project" data-category="mobile">
-                    <div class="project-frame">
-                        <img src="assets/pertumbuhan.jpg" alt="Human Growth App">
-                        <div class="project-overlay">
-                            <div class="project-magic">
-                                <h3>Human Growth App</h3>
-                                <p>An Android app showing human growth stages from baby to elderly. Tap "Next" to explore each life phase step-by-step.</p>
-                                <div class="project-sparkles">
-                                    <span>Kotlin</span>
-                                    <span>Jetpack Compose</span>
-                                    <span>Android</span>
-                                </div>
-                            </div>
-                            <div class="project-actions">
-                                <button class="project-btn" onclick="window.open('https://github.com/ecii123/Aplikasi_Pertumbuhan_Manusia.git', '_blank')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-glow"></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item magical-project" data-category="mobile">
-                    <div class="project-frame">
-                        <img src="assets/indeks.jpg" alt="BMI Calculator App">
-                        <div class="project-overlay">
-                            <div class="project-magic">
-                                <h3>Body Mass Index (BMI) Calculator App</h3>
-                                <p>Calculates BMI from weight and height input, then displays a visual result image based on category: underweight, normal, or overweight.</p>
-                                <div class="project-sparkles">
-                                    <span>Kotlin</span>
-                                    <span>Jetpack Compose</span>
-                                    <span>Android</span>
-                                </div>
-                            </div>
-                            <div class="project-actions">
-                                <button class="project-btn" onclick="window.open('https://github.com/ecii123/Aplikasi_Penghitung_BMI_IndeksMassaTubuh.git', '_blank')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-glow"></div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item magical-project" data-category="design">
-                    <div class="project-frame">
-                        <img src="assets/alfa.jpg" alt="Alfagift UI/UX Improvement">
-                        <div class="project-overlay">
-                            <div class="project-magic">
-                                <h3>Alfagift UI/UX Improvement</h3>
-                                <p>UI/UX research, wireframing, prototyping, and usability testing for Tracking and Store Selection features. MySkill Bootcamp final project — graduated with score 88.</p>
-                                <div class="project-sparkles">
-                                    <span>Figma</span>
-                                    <span>User Research</span>
-                                    <span>Prototyping</span>
-                                    <span>Score: 88 ⭐</span>
-                                </div>
-                            </div>
-                            <div class="project-actions">
-                                <button class="project-btn" onclick="window.open('https://drive.google.com/drive/folders/1-V_Rj3ls7pKjGirAZhlqH9IZoZYOUBp-?usp=sharing', '_blank')">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-glow"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">💼 Experience 💼</span>
-                <h2 class="section-title">Work Experience</h2>
-            </div>
-            <div class="experience-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">Aug 2025 – Dec 2025</div>
-                    <div class="timeline-content">
-                        <h3>Developer Intern</h3>
-                        <h4>PT. Tera Multi Wahana · Bekasi Selatan</h4>
-                        <p>Developed and enhanced <strong>50+ features</strong> for the Distributor Management System (DMS) by translating Functional Specification Documents into production-ready features using Flutter, Dart, C#, and SQL Server. Collaborated with system analysts and support teams in a cross-functional environment.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Jun 2025 – Aug 2025</div>
-                    <div class="timeline-content">
-                        <h3>Mobile Developer Intern</h3>
-                        <h4>PT. Suzuki Finance Indonesia · Jakarta Timur</h4>
-                        <p>Developed the <strong>SMILE module</strong> for the SUFI ONE mobile app using Flutter and Dart — features include direct visit, task visit, history visit, and bearer token authentication. Improved marketing reporting workflow with a user-oriented mobile interface.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Jun 2025 – Aug 2025</div>
-                    <div class="timeline-content">
-                        <h3>Frontend Developer Intern</h3>
-                        <h4>Zonaebt.com (PT Bala Biotech Indonesia) · Remote</h4>
-                        <p>Built the <strong>ZonaEBT Carbon Calculator</strong> website from scratch using Laravel — implementing carbon footprint calculation based on scientific formulas and designing a responsive user interface in collaboration with UI/UX and research teams.</p>
-                    </div>
-                </div>
-
-                <!-- ✅ TAMBAHAN: Research Member diperjelas kontribusinya -->
-                <div class="timeline-item">
-                    <div class="timeline-date">May 2024 – Nov 2024</div>
-                    <div class="timeline-content">
-                        <h3>Research Team Member</h3>
-                        <h4>Institut Teknologi Del</h4>
-                        <p>Contributed to a <strong>CNN-based research</strong> using MobileNetV3 architecture for facial skin disorder classification — supporting dataset collection, preparation, and model analysis.</p>
-                    </div>
-                </div>
-
-                <!-- ✅ TAMBAHAN: Assistant Lecturer diperjelas -->
-                <div class="timeline-item">
-                    <div class="timeline-date">Aug 2023 – Apr 2024</div>
-                    <div class="timeline-content">
-                        <h3>Assistant Lecturer — Basic Mathematics I & II</h3>
-                        <h4>Institut Teknologi Del</h4>
-                        <p>Conducted <strong>weekly tutoring sessions</strong> covering material reviews, guided discussions, and problem-solving exercises. Coordinated with the main lecturer to monitor student progress and provide constructive academic feedback.</p>
-                        <div class="scrum-badge"><i class="fas fa-chalkboard-teacher"></i> Teaching Leadership</div>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">Jun – Jul 2024</div>
-                    <div class="timeline-content">
-                        <h3>UI/UX Bootcamp Graduate</h3>
-                        <h4>MySkill Fullstack Intensive Bootcamp — Batch 15</h4>
-                        <p>Graduated with <strong>Distinction predicate</strong> and final score of 88. Successfully designed and prototyped innovative UI/UX improvement features for the Alfagift application.</p>
-                        <div class="scrum-badge"><i class="fas fa-star"></i> Score: 88 · Distinction</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ✅ SECTION BARU: Leadership & Organizations -->
-    <section id="leadership" class="leadership-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">👑 Leadership 👑</span>
-                <h2 class="section-title">Leadership & Organizations</h2>
-            </div>
-            <div class="leadership-grid">
-
-                <!-- Scrum Team Leader SIMBA -->
-                <div class="leadership-card">
-                    <div class="leadership-icon">🚀</div>
-                    <div class="leadership-period">Jan 2025 – May 2025</div>
-                    <h3>Scrum Team Leader</h3>
-                    <h4>Project SIMBA · Institut Teknologi Del</h4>
-                    <ul>
-                        <li>Led the Scrum team to deliver SIMBA web & Android apps within a 5-month timeline</li>
-                        <li>Drove task execution, tracked progress, and aligned team toward user-focused project goals</li>
-                        <li>Maintained product consistency across web and mobile platforms</li>
-                    </ul>
-                    <span class="leadership-badge"><i class="fas fa-crown"></i> Team Leader</span>
-                </div>
-
-                <!-- Scrum Team Leader SITA -->
-                <div class="leadership-card">
-                    <div class="leadership-icon">⚡</div>
-                    <div class="leadership-period">Nov 2024 – Dec 2024</div>
-                    <h3>Scrum Team Leader</h3>
-                    <h4>Project SITA · Institut Teknologi Del</h4>
-                    <ul>
-                        <li>Led Scrum team to deliver a web-based Final Project Management System in just 1 month</li>
-                        <li>Managed sprint timeline, planning, backlog, review, and retrospective via Coda</li>
-                        <li>Achieved <strong>Grade A</strong> for project excellence</li>
-                    </ul>
-                    <span class="leadership-badge"><i class="fas fa-star"></i> Grade A · Team Leader</span>
-                </div>
-
-                <!-- Kakak Asuh -->
-                <div class="leadership-card">
-                    <div class="leadership-icon">💜</div>
-                    <div class="leadership-period">Aug 2023 – Sep 2024</div>
-                    <h3>Student Leadership Program</h3>
-                    <h4>Kakak Asuh · Institut Teknologi Del</h4>
-                    <ul>
-                        <li>Led and guided 5 foster siblings in dormitory life and academic subjects</li>
-                        <li>Supervised daily activities, conducted performance assessments, and served as mentor & advisor</li>
-                        <li>Led the "Group of Growing Together" — promoting cleanliness and cultural norms</li>
-                    </ul>
-                    <span class="leadership-badge"><i class="fas fa-heart"></i> Mentor · Advisor</span>
-                </div>
-
-                <!-- Komisi Pemilu -->
-                <div class="leadership-card">
-                    <div class="leadership-icon">🗳️</div>
-                    <div class="leadership-period">May 2024 – Nov 2024</div>
-                    <h3>General Election Commission</h3>
-                    <h4>Himpunan Mahasiswa Informatika · Institut Teknologi Del</h4>
-                    <ul>
-                        <li>Managed election documents, candidate data, voter lists, archiving, and reporting</li>
-                        <li>Coordinated schedules for campaigns, debates, and voting activities</li>
-                        <li>Ensured transparent and well-organized student election processes</li>
-                    </ul>
-                    <span class="leadership-badge"><i class="fas fa-users"></i> Organization Member</span>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ✅ SECTION BARU: Certifications -->
-    <section id="certifications" class="certifications-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">🏆 Certifications 🏆</span>
-                <h2 class="section-title">Achievements & Certificates</h2>
-            </div>
-            <div class="cert-grid">
-
-                <!-- Oracle -->
-                <div class="cert-card oracle">
-                    <span class="cert-issuer-badge oracle"><i class="fas fa-certificate"></i> Oracle</span>
-                    <div class="cert-name">Oracle Cloud Infrastructure 2025 AI Foundations Associate</div>
-                    <div class="cert-meta"><i class="fas fa-calendar-alt"></i> 2025 &nbsp;·&nbsp; Credential ID: 103456813OCI25AICFA</div>
-                    <div class="cert-highlight">☁️ Cloud · AI Foundations</div>
-                </div>
-
-                <!-- Microsoft Elevate -->
-                <div class="cert-card microsoft">
-                    <span class="cert-issuer-badge microsoft"><i class="fab fa-microsoft"></i> Microsoft Elevate</span>
-                    <div class="cert-name">Meningkatkan Kecerdasan Copilot dengan RAG dan Fine-Tuning di Azure</div>
-                    <div class="cert-meta"><i class="fas fa-calendar-alt"></i> May 2026 &nbsp;·&nbsp; ID: ONLOZLSQO0</div>
-                    <div class="cert-highlight">🤖 AI · RAG · Azure — Terbaru 2026</div>
-                </div>
-
-                <!-- Coursera Business Analysis -->
-                <div class="cert-card coursera">
-                    <span class="cert-issuer-badge coursera"><i class="fas fa-graduation-cap"></i> Coursera</span>
-                    <div class="cert-name">Business Analysis & Process Management</div>
-                    <div class="cert-meta"><i class="fas fa-calendar-alt"></i> Jun 2024 &nbsp;·&nbsp; ID: TVVEVT5E2QJ2</div>
-                    <div class="cert-highlight">📊 Business Analysis · Process Management</div>
-                </div>
-
-                <!-- Coursera Excel -->
-                <div class="cert-card coursera">
-                    <span class="cert-issuer-badge coursera"><i class="fas fa-graduation-cap"></i> Coursera</span>
-                    <div class="cert-name">Introduction to Data Analysis using Microsoft Excel</div>
-                    <div class="cert-meta"><i class="fas fa-calendar-alt"></i> Jun 2024 &nbsp;·&nbsp; ID: ZU74JDU6H2XP</div>
-                    <div class="cert-highlight">📈 Data Analysis · Excel</div>
-                </div>
-
-                <!-- MySkill UI/UX -->
-                <div class="cert-card myskill">
-                    <span class="cert-issuer-badge myskill"><i class="fas fa-palette"></i> MySkill</span>
-                    <div class="cert-name">UI/UX Research and Design: Fullstack Intensive Bootcamp — Batch 15</div>
-                    <div class="cert-meta"><i class="fas fa-calendar-alt"></i> 2024 &nbsp;·&nbsp; Final Score: 88 (Distinction)</div>
-                    <div class="cert-highlight">🎨 UI/UX · User Research · Prototyping</div>
-                </div>
-
-                <!-- Dicoding -->
-                <div class="cert-card coursera">
-                    <span class="cert-issuer-badge coursera"><i class="fas fa-code"></i> Dicoding</span>
-                    <div class="cert-name">Front-End Web Developer Learning Path</div>
-                    <div class="cert-meta"><i class="fas fa-calendar-alt"></i> 2024</div>
-                    <div class="cert-highlight">🌐 Frontend · Web Development</div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">💌 Contact 💌</span>
-                <h2 class="section-title">Let's Create Something Amazing</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="dreamy-text-block">
-                        <div class="block-icon">🌸</div>
-                        <h3>Ready to collaborate?</h3>
-                        <p>I'm always excited to work on new projects and bring creative ideas to life. Let's discuss how we can create something amazing together!</p>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Email</span>
-                                <span class="contact-value">ysitanggang096@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Phone / WhatsApp</span>
-                                <span class="contact-value">+62 812-6328-0007</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <span class="contact-label">Location</span>
-                                <span class="contact-value">Tapanuli Utara, North Sumatra, Indonesia</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-garden">
-                        <a href="https://www.linkedin.com/in/yessi-sitanggang" class="social-flower" title="LinkedIn" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/ecii123" class="social-flower" title="GitHub" target="_blank">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="https://www.instagram.com/yessyyuliana/" class="social-flower" title="Instagram" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="mailto:ysitanggang096@gmail.com" class="social-flower" title="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <form class="dreamy-form" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" id="firstName" name="firstName" required>
-                                <label for="firstName">First Name</label>
-                                <div class="form-sparkle"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="lastName" name="lastName" required>
-                                <label for="lastName">Last Name</label>
-                                <div class="form-sparkle"></div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" required>
-                            <label for="email">Email Address</label>
-                            <div class="form-sparkle"></div>
-                        </div>
-                        <div class="form-group">
-                            <select id="service" name="service" required>
-                                <option value="">Choose collaboration type</option>
-                                <option value="frontend">Frontend Development</option>
-                                <option value="design">UI/UX Design</option>
-                                <option value="mobile">Mobile Development</option>
-                                <option value="consulting">Web Development</option>
-                            </select>
-                            <label for="service">Collaboration Type</label>
-                            <div class="form-sparkle"></div>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" required placeholder="Tell me about your project idea..."></textarea>
-                            <label for="message">Your Project Idea</label>
-                            <div class="form-sparkle"></div>
-                        </div>
-                        <button type="submit" class="magical-btn primary full-width">
-                            <span>Send Message</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="dreamy-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-text">Yessi</span>
-                        <span class="logo-accent">Sitanggang</span>
-                        <div class="logo-sparkle">✨</div>
-                    </div>
-                    <p>Frontend & Mobile Developer · UI/UX Designer · Scrum Team Leader · Passionate about creating beautiful, user-centered digital experiences ✨</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Explore</h4>
-                        <ul>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#experience">Experience</a></li>
-                            <li><a href="#leadership">Leadership</a></li>
-                            <li><a href="#certifications">Certifications</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li><a href="https://www.linkedin.com/in/yessi-sitanggang" target="_blank">LinkedIn</a></li>
-                            <li><a href="https://github.com/ecii123" target="_blank">GitHub</a></li>
-                            <li><a href="https://www.instagram.com/yessyyuliana/" target="_blank">Instagram</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Made with 💜 by Yessi Sitanggang © 2025 · Institut Teknologi Del</p>
-                <div class="footer-magic"></div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Success Modal -->
-    <div class="success-modal" id="successModal">
-        <div class="modal-content">
-            <div class="success-animation">
-                <div class="success-heart">💜</div>
-                <div class="success-sparkles">
-                    <span>✨</span>
-                    <span>🌟</span>
-                    <span>💫</span>
-                    <span>⭐</span>
-                </div>
-            </div>
-            <h3>Message Sent Successfully! 🎉</h3>
-            <p>Thank you for reaching out! I'll get back to you within 24 hours ✨</p>
-            <button class="magical-btn primary" onclick="closeSuccessModal()">
-                <span>Close</span>
-                <i class="fas fa-heart"></i>
-            </button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
+</div>
 </body>
 </html>
