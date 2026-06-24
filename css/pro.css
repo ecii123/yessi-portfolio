@@ -308,6 +308,36 @@ a, button, .tech-tag, .skill-pill-light, a p, a h3, a span, a h4, button span, b
 .cert-img-active { transform: scale(1) !important; }
 #cert-modal { cursor: zoom-out; }
 
+/* ── SKILL CHIPS (menggantikan skill bars) ── */
+.skill-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    background: #f8fafc;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: default;
+}
+
+/* Hover: chip loncat kecil & warna berubah */
+.skill-chip:hover {
+    transform: translateY(-2px) scale(1.04);
+    background: #eff6ff;
+    border-color: #bfdbfe;
+    color: #1d4ed8;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+/* Warna chip per kategori berdasarkan parent card hover */
+.group:hover .skill-chip {
+    border-color: #e2e8f0;
+}
+
 @media (max-width: 768px) {
     body { cursor: auto; }
     .cursor-dot, .cursor-outline { display: none; }
